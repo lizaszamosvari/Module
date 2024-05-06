@@ -1,0 +1,64 @@
+﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<IEnumerable<CicaModuleDnn.CicaModule.HelloWorld.Models.Item>>
+
+@using System.Text.RegularExpressions
+@using DotNetNuke.Web.Mvc.Helpers
+@using CicaModuleDnn.CicaModule.HelloWorld.Models
+@using CicaModuleDnn.CicaModule.HelloWorld
+
+<div id="centerpanel">
+    <div id="balpanel">
+        <img class="balkepek fent" src="/portals/0/Images/Modul/sarga_borito2.png" alt="Alternate Text" />
+        <p class="balmezo">Elülső oldal</p>
+        <img class="balkepek lent" src="/portals/0/Images/Modul/szurke_hatter2.png" alt="Alternate Text" />
+        <p class="balmezo">Hátsó oldal</p>
+    </div>
+    <div id="kozepso">
+        <div class="white-box">
+        </div>
+        <img src="/portals/0/Images/Modul/logo.png" alt="Leírás a képhez" class="overlay-image">
+    </div>
+    <div id="rightside">
+        <div class="flex-szoveg">
+            <div class="flex-item"><p class="holder">1. Borító</p></div>
+            <div class="flex-item"><p class="holder">2. Lemez</p></div>
+            <div class="flex-item"><p class="holder">3. Zenék</p></div>
+        </div>
+        <div class="gradient-line"></div>
+        <h3 id="h4">Elülső oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="bline"></div>
+        <h3 id="h4">Hátsó oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+            <div class="flex-toggle">
+                <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
+                <div class="flex-item toggle">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <input type="button" onclick="openWebPage()" id="addtocartbutton" value="Kosárba" class="btn btn-primary gomb">
+        </div>
+    </div>
+
+<script>
+    function openWebPage() {
+        window.location.href = "http://20.234.113.211:8096/Kosar?AddSku=TUD123&AddSkuQty=1";
+    }
+</script>
