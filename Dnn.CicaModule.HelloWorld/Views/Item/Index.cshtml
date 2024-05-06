@@ -5,11 +5,11 @@
 @using CicaModuleDnn.CicaModule.HelloWorld.Models
 @using CicaModuleDnn.CicaModule.HelloWorld
 
-<div id="centerpanel">
+<div id="lapokborito" class="lapokboritoclass">
     <div id="balpanel">
         <img class="balkepek fent" src="/portals/0/Images/Modul/sarga_borito2.png" alt="Alternate Text" />
         <p class="balmezo">Elülső oldal</p>
-        <img class="balkepek lent" src="/portals/0/Images/Modul/szurke_hatter2.png" alt="Alternate Text" />
+        <img id="szurkeboritolent" class="balkepek lent " src="/portals/0/Images/Modul/szurke_hatter2.png" alt="Alternate Text" />
         <p class="balmezo">Hátsó oldal</p>
     </div>
     <div id="kozepso">
@@ -44,21 +44,194 @@
             <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
             <p class="keppar">Kép feltöltése</p>
         </div>
-            <div class="flex-toggle">
-                <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
-                <div class="flex-item toggle">
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
             </div>
-            <input type="button" onclick="openWebPage()" id="addtocartbutton" value="Kosárba" class="btn btn-primary gomb">
         </div>
+        <input type="button" value="Következő" id="kovetkezo" class="kovi">
     </div>
-
+</div>
+<div id="lapokboritohatul" class="lapokboritoclass hatul">
+    <div id="balpanel">
+        <img id="szurkeboritofent" class="balkepek fent" src="/portals/0/Images/Modul/szurka_borito1.png" alt="Alternate Text" />
+        <p class="balmezo">Elülső oldal</p>
+        <img class="balkepek lent" src="/portals/0/Images/Modul/sarga_hatter.png" alt="Alternate Text" />
+        <p class="balmezo">Hátsó oldal</p>
+    </div>
+    <div id="kozepso">
+        <div class="white-box">
+        </div>
+        <img src="/portals/0/Images/Modul/logo.png" alt="Leírás a képhez" class="overlay-image">
+    </div>
+    <div id="rightside">
+        <div class="flex-szoveg">
+            <div class="flex-item"><p class="holder">1. Borító</p></div>
+            <div class="flex-item"><p class="holder">2. Lemez</p></div>
+            <div class="flex-item"><p class="holder">3. Zenék</p></div>
+        </div>
+        <div class="gradient-line"></div>
+        <h3 id="h4">Elülső oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="bline"></div>
+        <h3 id="h4">Hátsó oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <input type="button" value="Következő" id="kovetkezo" class="kovi">
+    </div>
+</div>
+<div id="lapoklemez" class="lapoklemezclass">
+    <div id="balpanel">
+        <img class="balkepek ballemezkep" src="/portals/0/Images/Modul/sarga_lemez1.png" alt="Alternate Text" />
+        <p class="balmezo">Elülső oldal</p>
+        <img id="szurkelemezlent"  class="balkepek ballemezkep" src="/portals/0/Images/Modul/szurke_lemez1.png" alt="Alternate Text" />
+        <p class="balmezo">Hátsó oldal</p>
+    </div>
+    <div id="kozepsolemez">
+        <img src="/portals/0/Images/Modul/nagy_lemez1.png" alt="Leírás a képhez" class="kozeplemez">
+    </div>
+    <div id="rightside">
+        <div class="flex-szoveg">
+            <div class="flex-item"><p class="holder">1. Borító</p></div>
+            <div class="flex-item"><p class="holder">2. Lemez</p></div>
+            <div class="flex-item"><p class="holder">3. Zenék</p></div>
+        </div>
+        <div class="gradient-line2"></div>
+        <h3 id="h4">Elülső oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="bline"></div>
+        <h3 id="h4">Hátsó oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <input type="button" value="Következő" id="kovetkezo" class="kovi">
+        <input type="button" value="Vissza" id="vissza" class="vissza">
+    </div>
+</div>
+<div id="lapoklemezhatul" class="lapoklemezclass">
+    <div id="balpanel">
+        <img id="szurkelemezfent" class="balkepek ballemezkep" src="/portals/0/Images/Modul/szurke_lemez1.png" alt="Alternate Text" />
+        <p class="balmezo">Elülső oldal</p>
+        <img class="balkepek ballemezkep" src="/portals/0/Images/Modul/sarga_lemez1.png" alt="Alternate Text" />
+        <p class="balmezo">Hátsó oldal</p>
+    </div>
+    <div id="kozepsolemez">
+        <img src="/portals/0/Images/Modul/nagy_lemez1.png" alt="Leírás a képhez" class="kozeplemez">
+    </div>
+    <div id="rightside">
+        <div class="flex-szoveg">
+            <div class="flex-item"><p class="holder">1. Borító</p></div>
+            <div class="flex-item"><p class="holder">2. Lemez</p></div>
+            <div class="flex-item"><p class="holder">3. Zenék</p></div>
+        </div>
+        <div class="gradient-line2"></div>
+        <h3 id="h4">Elülső oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="bline"></div>
+        <h3 id="h4">Hátsó oldal</h3>
+        <div class="kepfelt">
+            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+            <p class="keppar">Kép feltöltése</p>
+        </div>
+        <div class="flex-toggle">
+            <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
+            <div class="flex-item toggle">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <input type="button" value="Következő" id="kovetkezo" class="kovi">
+        <input type="button" value="Vissza" id="vissza" class="vissza">
+    </div>
+</div>
 <script>
-    function openWebPage() {
-        window.location.href = "http://20.234.113.211:8096/Kosar?AddSku=TUD123&AddSkuQty=1";
-    }
+    document.getElementById('kovetkezo').addEventListener('click', function () {
+        document.getElementById('lapokborito').style.display = 'none';
+        document.getElementById('lapokboritohatul').style.display = 'none';
+        document.getElementById('lapoklemez').style.display = 'flex';
+    });
+    document.getElementById('vissza').addEventListener('click', function () {
+        document.getElementById('lapoklemez').style.display = 'none';
+        document.getElementById('lapoklemezhatul').style.display = 'none';
+        document.getElementById('lapokborito').style.display = 'flex';
+    });
+    document.getElementById('szurkelemezlent').addEventListener('click', function () {
+        document.getElementById('lapoklemezhatul').style.display = 'flex';
+        document.getElementById('lapoklemez').style.display = 'none';
+    });
+    document.getElementById('szurkelemezfent').addEventListener('click', function () {
+        document.getElementById('lapoklemez').style.display = 'flex';
+        document.getElementById('lapoklemezhatul').style.display = 'none';
+    });
+    document.getElementById('szurkeboritolent').addEventListener('click', function () {
+        document.getElementById('lapokboritohatul').style.display = 'flex';
+        document.getElementById('lapokborito').style.display = 'none';
+    });
+    document.getElementById('szurkeboritofent').addEventListener('click', function () {
+        document.getElementById('lapokborito').style.display = 'flex';
+        document.getElementById('lapokboritohatul').style.display = 'none';
+    });
 </script>
