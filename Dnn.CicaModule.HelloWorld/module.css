@@ -246,19 +246,7 @@ input:checked + .slider:before {
     align-self: center;
 }
 
-#szurkelemezlent {
-    cursor: pointer;
-}
-
-#szurkelemezfent {
-    cursor: pointer;
-}
-
-#szurkeboritolent {
-    cursor: pointer;
-}
-
-#szurkeboritofent {
+#szurkelemezlent, #szurkelemezfent, #szurkeboritolent, #szurkeboritofent {
     cursor: pointer;
 }
 

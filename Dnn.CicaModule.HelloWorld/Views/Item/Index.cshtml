@@ -104,7 +104,7 @@
                 </label>
             </div>
         </div>
-        <input type="button" value="Következő" id="kovetkezo" class="kovi">
+        <input type="button" value="Következő" id="kovetkezo1" class="kovi">
     </div>
 </div>
 <div id="lapoklemez" class="lapoklemezclass">
@@ -204,17 +204,23 @@
             </div>
         </div>
         <input type="button" value="Következő" id="kovetkezo" class="kovi">
-        <input type="button" value="Vissza" id="vissza" class="vissza">
+        <input type="button" value="Vissza" id="vissza1" class="vissza">
     </div>
 </div>
 <script>
     document.getElementById('kovetkezo').addEventListener('click', function () {
         document.getElementById('lapokborito').style.display = 'none';
-        document.getElementById('lapokboritohatul').style.display = 'none';
         document.getElementById('lapoklemez').style.display = 'flex';
     });
     document.getElementById('vissza').addEventListener('click', function () {
         document.getElementById('lapoklemez').style.display = 'none';
+        document.getElementById('lapokborito').style.display = 'flex';
+    });
+    document.getElementById('kovetkezo1').addEventListener('click', function () {
+        document.getElementById('lapokboritohatul').style.display = 'none';
+        document.getElementById('lapoklemez').style.display = 'flex';
+    });
+    document.getElementById('vissza1').addEventListener('click', function () {
         document.getElementById('lapoklemezhatul').style.display = 'none';
         document.getElementById('lapokborito').style.display = 'flex';
     });
