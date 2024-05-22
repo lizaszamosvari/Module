@@ -4,7 +4,7 @@
 @using DotNetNuke.Web.Mvc.Helpers
 @using CicaModuleDnn.CicaModule.HelloWorld.Models
 @using CicaModuleDnn.CicaModule.HelloWorld
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div id="lapokborito" class="lapokboritoclass">
     <div id="balpanel">
         <img class="balkepek fent" src="/portals/0/Images/Modul/sarga_borito2.png" alt="Alternate Text" />
@@ -13,6 +13,7 @@
         <p class="balmezo">Hátsó oldal</p>
     </div>
     <div id="kozepso">
+        <div class="kepkozepre"></div>
         <div class="white-box">
         </div>
         <img src="/portals/0/Images/Modul/logo.png" alt="Leírás a képhez" class="overlay-image">
@@ -25,34 +26,13 @@
         </div>
         <div class="gradient-line"></div>
         <h3 id="h4">Elülső oldal</h3>
-        <div class="kepfelt">
-            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
-            <p class="keppar">Kép feltöltése</p>
-        </div>
-        <div class="flex-toggle">
-            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
-            <div class="flex-item toggle">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
+        <form id="imageUploadForm" action="zenekep.php" method="post" enctype="multipart/form-data">
+            <div id="kepfelt">
+                <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
+                <p class="keppar">Kép feltöltése</p>
+                <input type="file" id="fileInput" style="display: none;" accept="image/*">
             </div>
-        </div>
-        <div class="bline"></div>
-        <h3 id="h4">Hátsó oldal</h3>
-        <div class="kepfelt">
-            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
-            <p class="keppar">Kép feltöltése</p>
-        </div>
-        <div class="flex-toggle">
-            <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
-            <div class="flex-item toggle">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
+        </form>
         <input type="button" value="Következő" id="kovetkezo" class="kovi">
     </div>
 </div>
@@ -64,8 +44,10 @@
         <p class="balmezo">Hátsó oldal</p>
     </div>
     <div id="kozepso">
+        <div class="kepkozepre1"></div>
         <div class="white-box">
         </div>
+        <img src="/portals/0/Images/Modul/minta_zenek1.png" alt="Leírás a képhez" class="overlay-zenek" id="myImage">
         <img src="/portals/0/Images/Modul/logo.png" alt="Leírás a képhez" class="overlay-image">
     </div>
     <div id="rightside">
@@ -75,31 +57,17 @@
             <div class="flex-item"><p class="holder">3. Zenék</p></div>
         </div>
         <div class="gradient-line"></div>
-        <h3 id="h4">Elülső oldal</h3>
-        <div class="kepfelt">
-            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
-            <p class="keppar">Kép feltöltése</p>
-        </div>
-        <div class="flex-toggle">
-            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
-            <div class="flex-item toggle">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-        <div class="bline"></div>
         <h3 id="h4">Hátsó oldal</h3>
-        <div class="kepfelt">
+        <div id="kepfelt1">
             <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
             <p class="keppar">Kép feltöltése</p>
+            <input type="file" id="fileInput1" style="display: none;" accept="image/*">
         </div>
         <div class="flex-toggle">
             <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
             <div class="flex-item toggle">
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="imageToggle">
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -111,11 +79,13 @@
     <div id="balpanel">
         <img class="balkepek ballemezkep" src="/portals/0/Images/Modul/sarga_lemez1.png" alt="Alternate Text" />
         <p class="balmezo">Elülső oldal</p>
-        <img id="szurkelemezlent"  class="balkepek ballemezkep" src="/portals/0/Images/Modul/szurke_lemez1.png" alt="Alternate Text" />
+        <img id="szurkelemezlent" class="balkepek ballemezkep" src="/portals/0/Images/Modul/szurke_lemez1.png" alt="Alternate Text" />
         <p class="balmezo">Hátsó oldal</p>
     </div>
     <div id="kozepsolemez">
+        <div class="kepkozepre2"></div>
         <img src="/portals/0/Images/Modul/nagy_lemez1.png" alt="Leírás a képhez" class="kozeplemez">
+        <div class="kozepsokor"></div>
     </div>
     <div id="rightside">
         <div class="flex-szoveg">
@@ -125,35 +95,12 @@
         </div>
         <div class="gradient-line2"></div>
         <h3 id="h4">Elülső oldal</h3>
-        <div class="kepfelt">
+        <div id="kepfelt2">
             <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
             <p class="keppar">Kép feltöltése</p>
+            <input type="file" id="fileInput2" style="display: none;" accept="image/*">
         </div>
-        <div class="flex-toggle">
-            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
-            <div class="flex-item toggle">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-        <div class="bline"></div>
-        <h3 id="h4">Hátsó oldal</h3>
-        <div class="kepfelt">
-            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
-            <p class="keppar">Kép feltöltése</p>
-        </div>
-        <div class="flex-toggle">
-            <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
-            <div class="flex-item toggle">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-        <input type="button" value="Következő" id="kovetkezo" class="kovi">
+        <input type="button" value="Következő" id="kovetkezo2" class="kovi kovi2">
         <input type="button" value="Vissza" id="vissza" class="vissza">
     </div>
 </div>
@@ -165,7 +112,9 @@
         <p class="balmezo">Hátsó oldal</p>
     </div>
     <div id="kozepsolemez">
+        <div class="kepkozepre3"></div>
         <img src="/portals/0/Images/Modul/nagy_lemez1.png" alt="Leírás a képhez" class="kozeplemez">
+        <div class="kozepsokor"></div>
     </div>
     <div id="rightside">
         <div class="flex-szoveg">
@@ -174,70 +123,444 @@
             <div class="flex-item"><p class="holder">3. Zenék</p></div>
         </div>
         <div class="gradient-line2"></div>
-        <h3 id="h4">Elülső oldal</h3>
-        <div class="kepfelt">
-            <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
-            <p class="keppar">Kép feltöltése</p>
-        </div>
-        <div class="flex-toggle">
-            <div class="flex-item"><p class="modulepar">Szöveg hozzáadása</p></div>
-            <div class="flex-item toggle">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-        <div class="bline"></div>
         <h3 id="h4">Hátsó oldal</h3>
-        <div class="kepfelt">
+        <div id="kepfelt3">
             <img class="kepfeltoltes" src="/portals/0/Images/Modul/feltoltes.png" alt="Alternate Text" />
             <p class="keppar">Kép feltöltése</p>
+            <input type="file" id="fileInput3" style="display: none;" accept="image/*">
         </div>
-        <div class="flex-toggle">
-            <div class="flex-item"><p class="modulepar">Zene lista hozzáadása</p></div>
-            <div class="flex-item toggle">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-        <input type="button" value="Következő" id="kovetkezo" class="kovi">
+        <input type="button" value="Következő" id="kovetkezo3" class="kovi kovi2">
         <input type="button" value="Vissza" id="vissza1" class="vissza">
     </div>
 </div>
+<div id="zenekoldal" class="zenekoldal">
+    <div id="kozepsomix">
+        <div id="kozepsomixelem1">
+            <div class="kepkozepre"></div>
+            <div class="white-box"></div>
+            <img src="/portals/0/Images/Modul/logo.png" alt="Leírás a képhez" class="overlay-image">
+        </div>
+        <div id="kozepsomixelem2">
+            <div class="kepkozepre2"></div>
+            <img src="/portals/0/Images/Modul/nagy_lemez1.png" alt="Leírás a képhez" class="kozeplemez">
+        </div>
+    </div>
+    <div id="rightside">
+        <div class="flex-szoveg">
+            <div class="flex-item"><p class="holder">1. Borító</p></div>
+            <div class="flex-item"><p class="holder">2. Lemez</p></div>
+            <div class="flex-item"><p class="holder">3. Zenék</p></div>
+        </div>
+        <div class="gradient-line3"></div>
+        <h3 id="h4">Zenék kiválasztása</h3>
+        <div id="zenekivalaszto">
+                <img class="kepfeltoltes" src="/portals/0/Images/Modul/zene1.png" alt="Alternate Text" />
+                <p class="keppar">Zenék kiválasztása</p>        
+        </div>
+        <input type="button" value="Kosárba" id="mentes" class="kovi">
+        <input type="button" value="Vissza" id="vissza2" class="vissza">
+    </div>
+    <div id="modal1" class="modal1">
+        <div class="modal-content1">
+            <span class="close-button1">&times;</span>
+            <p id="popupszoveg">Berakod a kosárba a lemezt?</p>
+            <input type="button" id="confirmYes1" value="Igen" />
+            <input type="button" id="confirmNo1" value="Mégse" />
+        </div>
+    </div>
+
+    <div id="zene_myModal" class="zene_modal">
+        <div class="zene_modal-content">
+            <span class="zene_close">&times;</span>
+            <div id="z_modularisteljes">
+                <div id="z_modularisbelso">
+                    <div id="z_modularisbal">
+                        <input type="text" placeholder="Keresés..." id="zenekereso"/>
+                        <select id="product-listbox" multiple size="10"></select>
+                        <input type="button" value="Hozzáadás" id="zene_add-button" />
+                    </div>
+                    <div id="z_modularisjobb">
+                        <label>Választott zenék:</label>
+                        <select id="selected-products-listbox" multiple size="10"></select>
+                        <input type="button" value="Törlés" id="zene_remove-button" onclick="torolElem()"/>
+                    </div>
+                </div>
+                <div id="z_modularismentes">
+                    <input type="button" value="Mentés" id="zene_saveBtn" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <script>
-    document.getElementById('kovetkezo').addEventListener('click', function () {
-        document.getElementById('lapokborito').style.display = 'none';
-        document.getElementById('lapoklemez').style.display = 'flex';
+    var hatzene;
+    var toggle = document.getElementById("imageToggle");
+    function vizsgalat() {
+        if (toggle.checked) {
+            hatzene = " +Hátlapi szöveg";
+        } else {
+            hatzene = "";
+        }
+    }
+    (function Gombnavigációk() {
+        document.getElementById('kovetkezo').addEventListener('click', function () {
+            document.getElementById('lapokborito').style.display = 'none';
+            document.getElementById('lapoklemez').style.display = 'flex';
+
+            toggle.addEventListener('change', function () {
+                if (this.checked) {
+                    hatzene = " +Hátlapi szöveg";
+                } else {
+                    hatzene = "";
+                }
+
+                // Itt hajtódik végre a vizsgálat, ha változott az állapot
+                vizsgalat();
+            });
+            vizsgalat();
+            
+        });
+        document.getElementById('vissza').addEventListener('click', function () {
+            document.getElementById('lapoklemez').style.display = 'none';
+            document.getElementById('lapokborito').style.display = 'flex';
+        });
+        document.getElementById('kovetkezo1').addEventListener('click', function () {
+            document.getElementById('lapokboritohatul').style.display = 'none';
+            document.getElementById('lapoklemez').style.display = 'flex';
+            toggle.addEventListener('change', function () {
+                if (this.checked) {
+                    hatzene = " +Hátlapi szöveg";
+                } else {
+                    hatzene = "";
+                }
+
+                // Itt hajtódik végre a vizsgálat, ha változott az állapot
+                vizsgalat();
+            });
+            vizsgalat();
+        });
+        document.getElementById('vissza1').addEventListener('click', function () {
+            document.getElementById('lapoklemezhatul').style.display = 'none';
+            document.getElementById('lapokborito').style.display = 'flex';
+        });
+        document.getElementById('kovetkezo2').addEventListener('click', function () {
+            document.getElementById('lapoklemez').style.display = 'none';
+            document.getElementById('zenekoldal').style.display = 'flex';
+        });
+        document.getElementById('kovetkezo3').addEventListener('click', function () {
+            document.getElementById('lapoklemezhatul').style.display = 'none';
+            document.getElementById('zenekoldal').style.display = 'flex';
+        });
+        document.getElementById('vissza2').addEventListener('click', function () {
+            document.getElementById('zenekoldal').style.display = 'none';
+            document.getElementById('lapoklemez').style.display = 'flex';
+        });
+        document.getElementById('szurkelemezlent').addEventListener('click', function () {
+            document.getElementById('lapoklemezhatul').style.display = 'flex';
+            document.getElementById('lapoklemez').style.display = 'none';
+        });
+        document.getElementById('szurkelemezfent').addEventListener('click', function () {
+            document.getElementById('lapoklemez').style.display = 'flex';
+            document.getElementById('lapoklemezhatul').style.display = 'none';
+        });
+        document.getElementById('szurkeboritolent').addEventListener('click', function () {
+            document.getElementById('lapokboritohatul').style.display = 'flex';
+            document.getElementById('lapokborito').style.display = 'none';
+        });
+        document.getElementById('szurkeboritofent').addEventListener('click', function () {
+            document.getElementById('lapokborito').style.display = 'flex';
+            document.getElementById('lapokboritohatul').style.display = 'none';
+        });
+    })();
+    (function Kepfeltöltések() {
+        document.getElementById('kepfelt').addEventListener('click', function () {
+            document.getElementById('fileInput').click();
+        });
+        document.getElementById('fileInput').addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                var file = this.files[0];
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result; // A kép forrása a beolvasott fájl adat
+                    img.style.width = "100%"; // Méretezheted, ahogy szükséges
+                    img.style.height = "100%";
+
+                    var containers = document.querySelectorAll('.kepkozepre');
+                    containers.forEach(container => {
+                        container.innerHTML = ""; // Előző képek eltávolítása, ha szükséges
+                        container.appendChild(img.cloneNode(true)); // Hozzáadja a képet minden egyes div-hez
+                    });
+                };
+                reader.readAsDataURL(file); // Beolvassa a fájlt mint Data URL
+
+            }
+        });
+        document.getElementById('kepfelt1').addEventListener('click', function () {
+            document.getElementById('fileInput1').click();
+        });
+        document.getElementById('fileInput1').addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                var file = this.files[0];
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result; // A kép forrása a beolvasott fájl adat
+                    img.style.width = "100%"; // Méretezheted, ahogy szükséges
+                    img.style.height = "100%";
+
+                    var containers = document.querySelectorAll('.kepkozepre1');
+                    containers.forEach(container => {
+                        container.innerHTML = ""; // Előző képek eltávolítása, ha szükséges
+                        container.appendChild(img.cloneNode(true)); // Hozzáadja a képet minden egyes div-hez
+                    });
+                };
+
+                reader.readAsDataURL(file); // Beolvassa a fájlt mint Data URL
+            }
+        });
+        document.getElementById('kepfelt2').addEventListener('click', function () {
+            document.getElementById('fileInput2').click();
+        });
+        document.getElementById('fileInput2').addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                var file = this.files[0];
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result; // A kép forrása a beolvasott fájl adat
+                    img.style.width = "100%"; // Méretezheted, ahogy szükséges
+                    img.style.height = "100%";
+                    img.style.borderRadius = "50%";
+
+                    var containers = document.querySelectorAll('.kepkozepre2');
+                    containers.forEach(container => {
+                        container.innerHTML = ""; // Előző képek eltávolítása, ha szükséges
+                        container.appendChild(img.cloneNode(true)); // Hozzáadja a képet minden egyes div-hez
+                    });
+                };
+
+                reader.readAsDataURL(file); // Beolvassa a fájlt mint Data URL
+            }
+        });
+        document.getElementById('kepfelt3').addEventListener('click', function () {
+            document.getElementById('fileInput3').click();
+        });
+        document.getElementById('fileInput3').addEventListener('change', function () {
+            if (this.files && this.files[0]) {
+                var file = this.files[0];
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result; // A kép forrása a beolvasott fájl adat
+                    img.style.width = "100%"; // Méretezheted, ahogy szükséges
+                    img.style.height = "100%";
+                    img.style.borderRadius = "50%";
+
+                    var containers = document.querySelectorAll('.kepkozepre3');
+                    containers.forEach(container => {
+                        container.innerHTML = ""; // Előző képek eltávolítása, ha szükséges
+                        container.appendChild(img.cloneNode(true)); // Hozzáadja a képet minden egyes div-hez
+                    });
+                };
+
+                reader.readAsDataURL(file); // Beolvassa a fájlt mint Data URL
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageToggle = document.getElementById('imageToggle');
+            const myImage = document.getElementById('myImage');
+
+            imageToggle.addEventListener('change', function () {
+                if (imageToggle.checked) {
+                    myImage.style.display = 'block';
+                } else {
+                    myImage.style.display = 'none';
+                }
+            });
+        });
+    })();
+
+    $(document).ready(function () {
+        var url = "http://20.234.113.211:8096/DesktopModules/Hotcakes/API/rest/v1/products/";
+        var apiKey = "1-c5ef7982-7d10-4fd6-a506-27e3b01ddfb2";
+        var categoryId = "09ac1f2d-2acb-4078-89e9-4006e47effec";
+        var page = 1;
+        var pageSize = 100;
+        var randomNumber;
+
+        $.ajax({
+            dataType: "json",
+            url: url + "?key=" + apiKey + "&bycategory=" + categoryId + "&page=" + page + "&pagesize=" + pageSize,
+            type: 'GET',
+            success: function (data) {
+                var products = data.Content.Products;
+                var productListbox = $('#product-listbox');
+
+                // Termékek neveinek hozzáadása a listbox-hoz
+                $.each(products, function (index, product) {
+                    var option = $('<option></option>').attr('value', product.Bvin).text(product.ProductName);
+                    productListbox.append(option);
+                });
+            },
+            error: function (jqXHR, textStatus) {
+                console.log('Error: ' + textStatus);
+            }
+        });
+
+        // Hozzáadás gomb eseménykezelője
+        $('#zene_add-button').click(function () {
+            var selectedOption = $('#product-listbox option:selected');
+            if (selectedOption.length > 0) {
+                var selectedProductsListbox = $('#selected-products-listbox');
+                selectedProductsListbox.append(selectedOption.clone());
+            }
+        });
     });
-    document.getElementById('vissza').addEventListener('click', function () {
-        document.getElementById('lapoklemez').style.display = 'none';
-        document.getElementById('lapokborito').style.display = 'flex';
+    const listBox = document.getElementById('product-listbox');
+    listBox.addEventListener('change', function () {
+        const selectedOptions = listBox.selectedOptions;
+        if (selectedOptions.length > 10) {
+            alert('Maximum tíz elemet választhatsz ki!');
+            // Itt megteheted, hogy visszaállítod a kijelölést, vagy valamilyen más műveletet végzel
+        }
     });
-    document.getElementById('kovetkezo1').addEventListener('click', function () {
-        document.getElementById('lapokboritohatul').style.display = 'none';
-        document.getElementById('lapoklemez').style.display = 'flex';
+    $(document).ready(function () {
+        $('#mentes').on('click', function () {
+            createProduct();
+        });
     });
-    document.getElementById('vissza1').addEventListener('click', function () {
-        document.getElementById('lapoklemezhatul').style.display = 'none';
-        document.getElementById('lapokborito').style.display = 'flex';
+
+    function createProduct() {
+        var selectedOptions = $('#product-listbox option:selected');
+        var longDescription = "";
+        
+        selectedOptions.each(function () {
+            longDescription += $(this).text() + " ";
+        });
+        function generateRandomSixDigitNumber() {
+            return Math.floor(Math.random() * 900000) + 100000;
+        }
+        randomNumber = generateRandomSixDigitNumber();
+        longDescription += hatzene;
+        var product = {
+            "ProductName": "Egyedi Lemez",
+            "Sku": "CUSTOM-DISK-" + randomNumber,
+            "SitePrice": 14999,
+            "InventoryMode": 100,
+            "LongDescription": longDescription.trim(),
+        };
+
+        $.ajax({
+            dataType: "json",
+            url: url + "?key=" + apiKey,
+            data: JSON.stringify(product),
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                
+            },
+            error: function (jqXHR, textStatus) {
+                alert("Hiba történt a termék létrehozása során: " + textStatus);
+            }
+        });
+    }
+    var url = "http://20.234.113.211:8096/DesktopModules/Hotcakes/API/rest/v1/products/";
+    var apiKey = "1-c5ef7982-7d10-4fd6-a506-27e3b01ddfb2";
+
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var modal = document.getElementById("modal1");
+        var openModalBtn = document.getElementById("mentes");
+        var closeButton = document.querySelector(".close-button1");
+        var confirmYes = document.getElementById("confirmYes1");
+        var confirmNo = document.getElementById("confirmNo1");
+
+        openModalBtn.addEventListener("click", function () {
+            modal.style.display = "block";
+        });
+
+        closeButton.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        confirmYes.addEventListener("click", function () {
+            window.location.href = "http://20.234.113.211:8096/Kosar?AddSku=CUSTOM-DISK-" + randomNumber + "&AddSkuQty=1";
+        });
+
+        confirmNo.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
     });
-    document.getElementById('szurkelemezlent').addEventListener('click', function () {
-        document.getElementById('lapoklemezhatul').style.display = 'flex';
-        document.getElementById('lapoklemez').style.display = 'none';
+
+    const modal = document.getElementById("zene_myModal");
+    const openModalBtn = document.getElementById("zenekivalaszto");
+    const closeBtn = document.getElementsByClassName("zene_close")[0];
+    const saveBtn = document.getElementById("zene_saveBtn");
+
+    // Moduláris ablak megnyitása gomb kattintására
+    openModalBtn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // Moduláris ablak bezárása X gombbal
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Moduláris ablak bezárása mentés gombbal
+    saveBtn.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Moduláris ablak bezárása ha a felhasználó kattint az ablakon kívül
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    document.getElementById('zenekereso').addEventListener('input', function () {
+        let filter = this.value.toUpperCase();
+        let listbox = document.getElementById('product-listbox');
+        let options = listbox.getElementsByTagName('option');
+
+        for (let i = 0; i < options.length; i++) {
+            let txtValue = options[i].textContent || options[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                options[i].style.display = "";
+            } else {
+                options[i].style.display = "none";
+            }
+        }
     });
-    document.getElementById('szurkelemezfent').addEventListener('click', function () {
-        document.getElementById('lapoklemez').style.display = 'flex';
-        document.getElementById('lapoklemezhatul').style.display = 'none';
-    });
-    document.getElementById('szurkeboritolent').addEventListener('click', function () {
-        document.getElementById('lapokboritohatul').style.display = 'flex';
-        document.getElementById('lapokborito').style.display = 'none';
-    });
-    document.getElementById('szurkeboritofent').addEventListener('click', function () {
-        document.getElementById('lapokborito').style.display = 'flex';
-        document.getElementById('lapokboritohatul').style.display = 'none';
-    });
+
+    function torolElem() {
+        var listbox = document.getElementById("selected-products-listbox");
+        var selectedIndexes = [];
+
+        // Kiválasztott elem(ek) indexeinek összegyűjtése
+        for (var i = 0; i < listbox.options.length; i++) {
+            if (listbox.options[i].selected) {
+                selectedIndexes.push(i);
+            }
+        }
+
+        // Kiválasztott elem(ek) törlése visszafelé, hogy ne torzuljon az indexelés
+        for (var i = selectedIndexes.length - 1; i >= 0; i--) {
+            listbox.remove(selectedIndexes[i]);
+        }
+    }
 </script>

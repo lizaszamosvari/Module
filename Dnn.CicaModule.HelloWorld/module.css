@@ -1,4 +1,4 @@
-#mainpicheight{
+#mainpicheight {
     height: 200px;
 }
 
@@ -11,7 +11,7 @@
 .balmezo {
     font-size: 10px;
     margin: 0px;
-    text-align:center;
+    text-align: center;
 }
 
 #balpanel {
@@ -28,8 +28,8 @@
     margin-top: 10px;
 }
 
-.holder{
-    margin-bottom:0px;
+.holder {
+    margin-bottom: 0px;
 }
 
 .lapokboritoclass {
@@ -42,7 +42,14 @@
 .lapoklemezclass {
     display: none;
     margin-top: 30px;
-    column-gap: 28.5px;
+    column-gap: 38.5px;
+    justify-content: center;
+}
+
+.zenekoldal {
+    display: none;
+    margin-top: 30px;
+    column-gap: 40px;
     justify-content: center;
 }
 
@@ -63,7 +70,7 @@
 
 .gradient-line {
     height: 2px;
-    width: 300px; 
+    width: 300px;
     background: linear-gradient(to right, #f5cb5c 30%, white 30%);
     margin-left: 17px;
     margin-right: 17px;
@@ -73,6 +80,14 @@
     height: 2px;
     width: 300px;
     background: linear-gradient(to right,white 33%, #f5cb5c 33%,#f5cb5c 66%, white 66%);
+    margin-left: 17px;
+    margin-right: 17px;
+}
+
+.gradient-line3 {
+    height: 2px;
+    width: 300px;
+    background: linear-gradient(to left, #f5cb5c 30%, white 30%);
     margin-left: 17px;
     margin-right: 17px;
 }
@@ -133,11 +148,11 @@ input:checked + .slider:before {
     border-radius: 34px;
 }
 
-.slider.round:before {
-    border-radius: 50%;
-}
+    .slider.round:before {
+        border-radius: 50%;
+    }
 
-.modulepar{
+.modulepar {
     font-size: 12px;
 }
 
@@ -164,7 +179,7 @@ input:checked + .slider:before {
     margin-bottom: 3px;
 }
 
-.ballemezkep{
+.ballemezkep {
     margin-left: 10px;
 }
 
@@ -176,20 +191,51 @@ input:checked + .slider:before {
 }
 
 .overlay-image {
-    position: absolute; 
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(167%, 180%);
     max-width: 18%;
 }
 
+.overlay-zenek {
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    max-width: 83%;
+    display: none;
+}
+
 #kozepso {
     position: relative;
     height: 250px;
+    width: 250px;
     align-self: center;
 }
 
-.fent{
+#kozepsomix {
+    height: 250px;
+    width: 250px;
+    align-self: center;
+    margin-left: 100px;
+}
+
+#kozepsomixelem1 {
+    position: absolute;
+    top: 3%;
+    left: 20%;
+    z-index: 3;
+}
+
+#kozepsomixelem2 {
+    position: absolute;
+    top: 3%;
+    left: 25%;
+    z-index: 1;
+}
+
+
+.fent {
     margin-left: 10px;
 }
 
@@ -201,18 +247,19 @@ input:checked + .slider:before {
     justify-content: center;
 }
 
-.kepfeltoltes{
-    height:30px;
+.kepfeltoltes {
+    height: 30px;
     margin-left: 5px;
 }
 
-.kepfelt {
+#kepfelt, #kepfelt1, #kepfelt2, #kepfelt3, #zenekivalaszto {
     display: flex;
     align-items: center;
     border: 2px solid #FFFFFF;
     border-radius: 10px;
     width: 140px;
     margin-left: 19px;
+    cursor: pointer;
 }
 
 .kovi {
@@ -221,9 +268,17 @@ input:checked + .slider:before {
     background-color: #f5cb5c;
     height: 30px;
     width: 150px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     margin-left: 14px;
     font-size: 15px;
+}
+
+.kovi2 {
+    margin-top: 58px;
+}
+
+#kovetkezo{
+    margin-top:58px;
 }
 
 .vissza {
@@ -238,7 +293,7 @@ input:checked + .slider:before {
 }
 
 .kozeplemez {
-    height: 270px;
+    height: 250px;
 }
 
 #kozepsolemez {
@@ -250,6 +305,185 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.hatul{
+.hatul {
     display: none;
+}
+
+.kepkozepre, .kepkozepre1 {
+    height: 250px;
+    width: 250px;
+    align-self: center;
+    position: absolute;
+}
+
+.kepkozepre2, .kepkozepre3 {
+    height: 250px;
+    width: 250px;
+    align-self: center;
+    position: absolute;
+}
+
+.kozepsokor {
+    position: absolute;
+    top: 33%;
+    left: 34%;
+    width: 85px; /* Kör szélessége */
+    height: 85px; /* Kör magassága */
+    background-color: #242423; /* Kör színe */
+    border-radius: 50%;
+}
+
+#zenekivalaszto {
+    display: flex;
+    justify-content: center;
+    width: 164px;
+}
+
+#selected-products-listbox, #product-listbox {
+    width: 328px;
+    background-color: #222120;
+    
+}
+
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #242423;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 160px;
+}
+
+.modal-content1 {
+    background-color: #242423;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.close-button1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close-button1:hover,
+    .close-button1:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+#popupszoveg {
+    text-align: center;
+}
+
+#confirmYes1, #confirmNo1 {
+    margin-bottom: 10px;
+    background-color: #f5cb5c;
+    color: black;
+    border-radius: 10px;
+}
+
+/* Moduláris ablak stílusai */
+.zene_modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.zene_modal-content {
+    background-color: #242423;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: 52%;
+}
+
+.zene_close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .zene_close:hover,
+    .zene_close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+#z_modularisbelso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#z_modularisbal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#z_modularisjobb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#z_modularisteljes {
+    display: flex;
+    flex-direction: column;
+}
+
+#z_modularismentes {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#zene_saveBtn{
+    width: 70px;
+}
+
+#zene_saveBtn, #zene_add-button, #zene_remove-button {
+    background-color: #f5cb5c;
+    color: black;
+    border-radius: 10px;
+}
+
+#zene_add-button, #zene_remove-button {
+    width: 100px;
+}
+
+#mentes{
+    margin-top:58px;
+
+}
+
+#zenekereso{
+    color: white;
+    background-color: #444444;
 }
